@@ -1,0 +1,56 @@
+{
+	"Inv1": {
+		"Item": 10001
+	},
+	"Inv2": {
+		"Item": 10009
+	},
+	"Inv3": {
+		"Item": 10010
+	},
+	"Inv4": {
+		"Item": 10004
+	},
+	"Inv5": {
+		"Item": 10003
+	},
+	"Inv6": {
+		"Item": 10006
+	},
+	"Inv7": {
+		"Item": 10002
+	},
+	"Inv8": {
+		"Item": 10007
+	},
+	"Inv9": {
+		"Item": 10008
+	},
+	"Inv10": {
+		"Item": null
+	},
+	"Inv11": {
+		"Item": null
+	},
+	"Inv12": {
+		"Item": null
+	},
+	"Inv13": {
+		"Item": null
+	},
+	"Inv14": {
+		"Item": null
+	},
+	"Inv15": {
+		"Item": null
+	},
+	"Inv16": {
+		"Item": null
+	},
+	"Inv17": {
+		"Item": null
+	},
+	"Inv18": {
+		"Item": null
+	}
+}

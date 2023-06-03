@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Action RPG Resources/Player/newplayer/Player/Player.png" type="Texture" id=1]
+[ext_resource path="res://battle/player/playerbattle.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fireball"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 39, 38, 37, 36 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 18 ]
+}
+
+[node name="player" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 65
+frame = 18
+
+[node name="AniPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/Fireball = SubResource( 2 )
+anims/idle = SubResource( 1 )
+
+[connection signal="animation_finished" from="AniPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -1,0 +1,52 @@
+{
+  "10001": {
+    "Name": "Old Sword",
+    "Category": "Weapon",
+    "Type": "Sword"
+  },
+  "10002": {
+    "Name": "Common Sword",
+    "Category": "Weapon",
+    "Type": "Sword"
+  },
+  "10003": {
+    "Name": "Epic Sword",
+    "Category": "Weapon",
+    "Type": "Sword"
+  },
+  "10004": {
+    "Name": "Axe",
+    "Category": "Weapon",
+    "Type": "Axe"
+  },
+  "10005": {
+    "Name": "Shield",
+    "Category": "Shield",
+    "Type": "Shield"
+  },
+  "10006": {
+    "Name": "Lesser Health Potion",
+    "Category": "Potion",
+    "Type": "HealthPotion"
+  },
+  "10007": {
+    "Name": "Mana Potion",
+    "Category": "Potion",
+    "Type": "ManaPotion"
+  },
+  "10008": {
+    "Name": "Loaf of Bread",
+    "Category": "Food",
+    "Type": "Food"
+  },
+  "10009": {
+    "Name": "Steel Helmet",
+    "Category": "Armor",
+    "Type": "Helmet"
+  },
+  "10010": {
+    "Name": "Steel Armor",
+    "Category": "Armor",
+    "Type": "Armor"
+  }
+}

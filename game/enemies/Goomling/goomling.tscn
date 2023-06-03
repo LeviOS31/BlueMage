@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://enemies/Goomling/goomling.png" type="Texture" id=1]
+[ext_resource path="res://Action RPG Resources/Shadows/MediumShadow.png" type="Texture" id=2]
+[ext_resource path="res://wandercontrol.tscn" type="PackedScene" id=9]
+[ext_resource path="res://whiteshader.shader" type="Shader" id=10]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 10 )
+shader_param/active = false
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("goomling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 5, 6 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "chase"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("goomling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=4]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("goomling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("goomling:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 1, 2 ]
+}
+
+[node name="goomling" type="KinematicBody2D"]
+collision_layer = 32
+
+[node name="MediumShadow" type="Sprite" parent="."]
+position = Vector2( -1, 8 )
+scale = Vector2( 1.20839, 1.18562 )
+texture = ExtResource( 2 )
+
+[node name="goomling" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( -0.21949, 0.468643 )
+texture = ExtResource( 1 )
+hframes = 7
+frame = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/attack = SubResource( 2 )
+anims/chase = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/wander = SubResource( 5 )
+
+[node name="wandercontrol" parent="." instance=ExtResource( 9 )]
+wander_range = 12
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

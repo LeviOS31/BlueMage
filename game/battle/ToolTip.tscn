@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Gradient" id=1]
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+
+[node name="ToolTip" type="Popup"]
+margin_right = 19.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 19, 11 )
+
+[node name="N" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+
+[node name="M" type="MarginContainer" parent="N"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 1
+custom_constants/margin_top = 1
+custom_constants/margin_left = 1
+
+[node name="V" type="VBoxContainer" parent="N/M"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 18.0
+margin_bottom = 11.0

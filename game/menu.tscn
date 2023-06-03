@@ -1,0 +1,427 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://menu.gd" type="Script" id=1]
+[ext_resource path="res://Action RPG Resources/Player/newplayer/Player/Player.png" type="Texture" id=2]
+[ext_resource path="res://newart/Tree_StartUp-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://newart/sun.png" type="Texture" id=4]
+[ext_resource path="res://newart/Grass_Start.png" type="Texture" id=5]
+[ext_resource path="res://Action RPG Resources/start screen/Cloud.png" type="Texture" id=6]
+[ext_resource path="res://clouds.gd" type="Script" id=8]
+[ext_resource path="res://birds.gd" type="Script" id=9]
+[ext_resource path="res://Action RPG Resources/start screen/Bird_Start_3.png" type="Texture" id=10]
+[ext_resource path="res://Action RPG Resources/start screen/Bird_Start.png" type="Texture" id=11]
+[ext_resource path="res://Action RPG Resources/start screen/Bird_Start_2.png" type="Texture" id=12]
+[ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer03.png" type="Texture" id=13]
+[ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer01.png" type="Texture" id=14]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=24]
+[ext_resource path="res://transitionscene.tscn" type="PackedScene" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "animate",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 400, 0, 100, 100 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 64 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 9, 10, 11, 9 ]
+}
+
+[node name="menu" type="Control"]
+margin_right = 64.0
+margin_bottom = 176.0
+script = ExtResource( 1 )
+
+[node name="Demo01PixelSkyLayer01" type="Sprite" parent="."]
+position = Vector2( 154.862, 91.75 )
+scale = Vector2( 1.59885, 1.64815 )
+texture = ExtResource( 14 )
+
+[node name="Demo01PixelSkyLayer03" type="Sprite" parent="."]
+self_modulate = Color( 0.568627, 0.847059, 0.301961, 1 )
+position = Vector2( 162, 114 )
+scale = Vector2( 1.46667, 1.46667 )
+texture = ExtResource( 13 )
+
+[node name="sun_Intro" type="Sprite" parent="."]
+position = Vector2( 10, 9 )
+scale = Vector2( 1.53125, 1.53125 )
+texture = ExtResource( 4 )
+
+[node name="clouds" type="KinematicBody2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Cloud" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( 81, 90 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="Cloud2" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( 259, 92.8 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="Cloud3" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( -98, 90 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="Cloud4" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( -254, 90 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="Cloud5" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( -419, 90 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="Cloud6" type="Sprite" parent="clouds"]
+light_mask = 3
+position = Vector2( -598, 90 )
+scale = Vector2( 2.79688, 2.79688 )
+texture = ExtResource( 6 )
+
+[node name="birds" type="KinematicBody2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="birdsanimation" type="AnimatedSprite" parent="birds"]
+position = Vector2( -11, 45 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation2" type="AnimatedSprite" parent="birds"]
+position = Vector2( -19, 35 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation3" type="AnimatedSprite" parent="birds"]
+position = Vector2( -73, 42 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation4" type="AnimatedSprite" parent="birds"]
+position = Vector2( -58, 23 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation5" type="AnimatedSprite" parent="birds"]
+position = Vector2( -118, 20 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="birdsanimation6" type="AnimatedSprite" parent="birds"]
+position = Vector2( -259, 47 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="birdsanimation7" type="AnimatedSprite" parent="birds"]
+position = Vector2( -267, 28 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation8" type="AnimatedSprite" parent="birds"]
+position = Vector2( -313, 52 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation9" type="AnimatedSprite" parent="birds"]
+position = Vector2( -293, 13 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+playing = true
+
+[node name="birdsanimation10" type="AnimatedSprite" parent="birds"]
+position = Vector2( -391, 15 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+playing = true
+
+[node name="birdsanimation11" type="AnimatedSprite" parent="birds"]
+position = Vector2( -417, 37 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation12" type="AnimatedSprite" parent="birds"]
+position = Vector2( -431, 16 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation13" type="AnimatedSprite" parent="birds"]
+position = Vector2( -464, 40 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="birdsanimation15" type="AnimatedSprite" parent="birds"]
+position = Vector2( -511, 49 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation16" type="AnimatedSprite" parent="birds"]
+position = Vector2( -520, 30 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation17" type="AnimatedSprite" parent="birds"]
+position = Vector2( -546, 13 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation18" type="AnimatedSprite" parent="birds"]
+position = Vector2( -547, 29 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation19" type="AnimatedSprite" parent="birds"]
+position = Vector2( -596, 25 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+playing = true
+
+[node name="birdsanimation20" type="AnimatedSprite" parent="birds"]
+position = Vector2( -588, 36 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+playing = true
+
+[node name="birdsanimation21" type="AnimatedSprite" parent="birds"]
+position = Vector2( -660, 20 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+playing = true
+
+[node name="birdsanimation22" type="AnimatedSprite" parent="birds"]
+position = Vector2( -637, 25 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 3
+playing = true
+
+[node name="birdsanimation23" type="AnimatedSprite" parent="birds"]
+position = Vector2( -651, 34 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="birdsanimation24" type="AnimatedSprite" parent="birds"]
+position = Vector2( -676, 26 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation25" type="AnimatedSprite" parent="birds"]
+position = Vector2( -733, 21 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="birdsanimation26" type="AnimatedSprite" parent="birds"]
+position = Vector2( -721, 36 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation27" type="AnimatedSprite" parent="birds"]
+position = Vector2( -748, 27 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 1
+playing = true
+
+[node name="birdsanimation14" type="AnimatedSprite" parent="birds"]
+position = Vector2( -493, 18 )
+scale = Vector2( 0.359375, 0.359375 )
+frames = SubResource( 1 )
+animation = "animate"
+frame = 2
+playing = true
+
+[node name="tree" type="AnimatedSprite" parent="."]
+position = Vector2( 305, 72 )
+scale = Vector2( 2.75, 2.75 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="player" type="KinematicBody2D" parent="."]
+script = ExtResource( 24 )
+
+[node name="Player" type="Sprite" parent="player"]
+position = Vector2( 260, 143 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+hframes = 65
+frame = 64
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
+autoplay = "idle"
+anims/idle = SubResource( 3 )
+anims/run = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="player"]
+wait_time = 4.5
+one_shot = true
+
+[node name="grass" type="Node2D" parent="."]
+position = Vector2( 35, -14 )
+
+[node name="Grass_Start" type="Sprite" parent="grass"]
+position = Vector2( 311, 176 )
+scale = Vector2( -2.156, 2.156 )
+texture = ExtResource( 5 )
+offset = Vector2( 23.6522, -20.4058 )
+
+[node name="Grass_Start2" type="Sprite" parent="grass"]
+position = Vector2( 75, 176 )
+scale = Vector2( 2.15625, 2.15625 )
+texture = ExtResource( 5 )
+offset = Vector2( 23.6522, -20.4058 )
+
+[node name="Grass_Start3" type="Sprite" parent="grass"]
+position = Vector2( -63, 176 )
+scale = Vector2( 2.15625, 2.15625 )
+texture = ExtResource( 5 )
+offset = Vector2( 23.6522, -20.4058 )
+
+[node name="transitionscene" parent="." instance=ExtResource( 25 )]
+
+[node name="startButton" parent="transitionscene/VBoxContainer" index="0"]
+margin_bottom = 18.5145
+
+[node name="exitButton" parent="transitionscene/VBoxContainer" index="1"]
+margin_top = 22.0
+margin_bottom = 40.5145
+
+[node name="Timer" parent="transitionscene" index="3"]
+wait_time = 1.1
+one_shot = true
+
+[connection signal="timeout" from="player/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="transitionscene/VBoxContainer/startButton" to="." method="_on_startButton_pressed"]
+[connection signal="pressed" from="transitionscene/VBoxContainer/exitButton" to="." method="_on_exitButton_pressed"]
+
+[editable path="transitionscene"]
