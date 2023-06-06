@@ -19,7 +19,7 @@ func _physics_process(delta):
 	if movetoggle == true:
 		moveplayer()
 	if $transitionscene/Timer.time_left < 0.1 && $transitionscene/Timer.time_left > 0.00001:
-		get_tree().change_scene("res://world.tscn")
+		get_tree().change_scene("res://worlds/world.tscn")
 
 
 func checkpressed():

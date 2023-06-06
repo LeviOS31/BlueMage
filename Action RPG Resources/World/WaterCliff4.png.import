@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CliffTileset.png-030ffaae1fbca7f234df88c3da261949.stex"
+path="res://.import/WaterCliff4.png-403772e89163ff262847b9c4b89008fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Action RPG Resources/World/CliffTileset.png"
-dest_files=[ "res://.import/CliffTileset.png-030ffaae1fbca7f234df88c3da261949.stex" ]
+source_file="res://Action RPG Resources/World/WaterCliff4.png"
+dest_files=[ "res://.import/WaterCliff4.png-403772e89163ff262847b9c4b89008fc.stex" ]
 
 [params]
 

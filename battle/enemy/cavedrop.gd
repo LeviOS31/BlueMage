@@ -22,7 +22,7 @@ func start():
 	randomize()
 	$Sprite.scale = Vector2(2,2)
 	position = position + Vector2(-5,-20)
-	$AniPlayer.connect("animation_finished", self, "idle_l")
+	$AniPlayer.connect("animation_finished", self, "idle")
 
 func choose(Phealth, turnnum):
 	var num = randf() * 100
@@ -68,5 +68,5 @@ func Duration():
 
 func idle(name):
 	print("idle")
-	$AniPlayer.play("idle")
+	$AniPlayer.play("idle_l")
 

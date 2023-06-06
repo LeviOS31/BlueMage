@@ -668,7 +668,7 @@ environment = SubResource( 63 )
 
 [node name="detection" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 32
+collision_mask = 160
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection"]
 position = Vector2( 0, -8.14712 )

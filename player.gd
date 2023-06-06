@@ -13,14 +13,15 @@ enum{
 	BATTLE
 }
 
-func _ready():
-	animation.active = true
-	
 var state = WORLD
 export var speed = 75
 export var friction = 200
-
 var velocity = Vector2.ZERO
+
+func _ready():
+	animation.active = true
+	Coordinates.PlacePlayer()
+	
 
 func _physics_process(delta):
 	move(delta)
@@ -52,13 +53,6 @@ func _on_detection_body_entered(body):
 	
 	if body.is_in_group("building"):
 		global_position = body.location
-	
-	if "cave" in str(body.get_path()) && not "drop" in str(body.get_path()):
-		$"../../transitionscene".transition_to_black()
-		yield(self, "tran")
-		Global.playerlocation = null
-		get_tree().change_scene("res://worlds/"+body.name+".tscn")
-		
 	
 	if "enemies" in str(body.get_path()):
 		Global.enemytoremove = body.get_path()
