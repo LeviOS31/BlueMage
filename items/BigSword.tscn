@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pixel Swords Assets 16x16/BigSword.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 15 )
+
+[node name="BigSword" type="Control" groups=["items"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -288.0
+margin_bottom = -148.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+shape = SubResource( 1 )
