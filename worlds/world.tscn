@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://cave.gd" type="Script" id=1]
 [ext_resource path="res://Lighting.gd" type="Script" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Action RPG Resources/World/WaterCliff.tres" type="Texture" id=17]
 [ext_resource path="res://buildings/interior/floor.png" type="Texture" id=18]
 [ext_resource path="res://buildings/interior/walls.png" type="Texture" id=19]
+[ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -1600,6 +1601,13 @@ margin_top = -1.0
 margin_right = -2.0
 margin_bottom = -1.0
 player = NodePath("../../YSort/player")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource( 20 )]
+visible = false
+margin_left = -5.0
+margin_top = -5.0
+margin_right = -5.0
+margin_bottom = -5.0
 
 [node name="LightSource" parent="." instance=ExtResource( 5 )]
 position = Vector2( 133, 88 )
