@@ -59,6 +59,7 @@ func cursor_in_item(event: InputEvent, ctrl_Item: Control):
 		selecteditem = ctrl_Item
 		selecteditem.get_node("Sprite").set_z_index(selectedzindex)
 		itemprevposition = selecteditem.rect_global_position
+		print(ctrl_Item)
 		if (selecteditem.rect_position > panel.rect_size || selecteditem.rect_position < Vector2(0,0)):
 			isselecteditemininventory = false
 		else:

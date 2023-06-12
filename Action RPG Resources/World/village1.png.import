@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grid.png-ba0f2cfd8b4928357f428a5aef07d215.stex"
+path="res://.import/village1.png-2523122902ebce3fbb3e6fcb43427f58.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Grid.png"
-dest_files=[ "res://.import/Grid.png-ba0f2cfd8b4928357f428a5aef07d215.stex" ]
+source_file="res://Action RPG Resources/World/village1.png"
+dest_files=[ "res://.import/village1.png-2523122902ebce3fbb3e6fcb43427f58.stex" ]
 
 [params]
 
@@ -19,10 +19,10 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

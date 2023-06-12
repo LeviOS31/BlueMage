@@ -12,7 +12,7 @@
 [ext_resource path="res://newart/bg_cave.png" type="Texture" id=10]
 [ext_resource path="res://enemies/cavedrop/cavedrop.tscn" type="PackedScene" id=11]
 [ext_resource path="res://test/LightSource.tscn" type="PackedScene" id=12]
-[ext_resource path="res://worlds/world1.gd" type="Script" id=13]
+[ext_resource path="res://transitions/world1.gd" type="Script" id=13]
 
 [sub_resource type="TileSet" id=102]
 0/name = "caveground.png 0"

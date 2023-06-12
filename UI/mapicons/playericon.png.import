@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Knife.png-98d4d28305f4922820c67b6791ae1b9f.stex"
+path="res://.import/playericon.png-dfb6debdde67ed2f2cb467ec53c9f367.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Swords Assets 16x16/Knife.png"
-dest_files=[ "res://.import/Knife.png-98d4d28305f4922820c67b6791ae1b9f.stex" ]
+source_file="res://UI/mapicons/playericon.png"
+dest_files=[ "res://.import/playericon.png-dfb6debdde67ed2f2cb467ec53c9f367.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/normal_map=0
 flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false

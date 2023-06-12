@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://UI/Grid.png" type="Texture" id=1]
-[ext_resource path="res://items/BigSword.tscn" type="PackedScene" id=2]
-[ext_resource path="res://items/knife.tscn" type="PackedScene" id=3]
-[ext_resource path="res://items/Shovel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/inventory/img/Grid.png" type="Texture" id=1]
+[ext_resource path="res://UI/inventory/BigSword.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/inventory/knife.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/inventory/Shovel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Inventory.gd" type="Script" id=5]
 [ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.3/BAG.png" type="Texture" id=6]
 

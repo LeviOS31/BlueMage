@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shovel.png-230e69242b28e43523ec496ec7a93b0a.stex"
+path="res://.import/BigSword.png-d70e34e3d364dd6db5b0af4aad1e0157.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Swords Assets 16x16/Shovel.png"
-dest_files=[ "res://.import/Shovel.png-230e69242b28e43523ec496ec7a93b0a.stex" ]
+source_file="res://UI/inventory/img/BigSword.png"
+dest_files=[ "res://.import/BigSword.png-d70e34e3d364dd6db5b0af4aad1e0157.stex" ]
 
 [params]
 

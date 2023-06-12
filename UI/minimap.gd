@@ -6,8 +6,9 @@ export var zoom = 1.5
 onready var grid = $MarginContainer/grid
 onready var playerM = $MarginContainer/grid/player
 onready var caveM = $MarginContainer/grid/cave
+onready var villageM = $MarginContainer/grid/village
 
-onready var icons = {"cave":caveM}
+onready var icons = {"cave":caveM, "village":villageM}
 
 var grid_scale
 var marker = {}

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BigSword.png-8104e6f91a0f17849154d555bd784b81.stex"
+path="res://.import/villageicon.png-e059177203ec41cf53b754424595a1f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Swords Assets 16x16/BigSword.png"
-dest_files=[ "res://.import/BigSword.png-8104e6f91a0f17849154d555bd784b81.stex" ]
+source_file="res://UI/mapicons/villageicon.png"
+dest_files=[ "res://.import/villageicon.png-e059177203ec41cf53b754424595a1f3.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/normal_map=0
 flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
-flags/anisotropic=true
+flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
