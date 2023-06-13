@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://transitions/cave.gd" type="Script" id=1]
 [ext_resource path="res://Lighting.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Action RPG Resources/World/village1.png" type="Texture" id=21]
 [ext_resource path="res://transitions/village.gd" type="Script" id=22]
+[ext_resource path="res://UI/minimap/mapanchor.gd" type="Script" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=112]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -1202,7 +1203,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=51]
 
 [sub_resource type="RectangleShape2D" id=73]
-extents = Vector2( 65.735, 13.7839 )
+extents = Vector2( 65.735, 36.4868 )
 
 [sub_resource type="Shader" id=115]
 code = "shader_type canvas_item;
@@ -1446,13 +1447,23 @@ input_pickable = false
 script = ExtResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/village_Kald"]
-position = Vector2( 5.97577, 12.1623 )
+position = Vector2( 5.97577, -10.5406 )
 shape = SubResource( 73 )
 
 [node name="Village1" type="Sprite" parent="YSort/village_Kald"]
 position = Vector2( 11.9518, -51.8922 )
 scale = Vector2( 1.49398, 1.62163 )
 texture = ExtResource( 21 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/village_Kald"]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/village_Kald/StaticBody2D"]
+polygon = PoolVector2Array( 0, -38.9192, -35.8555, -38.9192, -35.8555, 12.9731, -71.711, -38.9192, -71.711, -103.785, -71.711, -129.731, -47.8073, -142.704, -17.9277, -152.434, 61.2531, -142.704, 88.1447, -115.136, 83.6627, -56.7572, 73.2049, -8.10817, 47.8073, 16.2163, 38.8434, 9.7298, 38.8434, -38.9192 )
+
+[node name="mapanchor" type="Node2D" parent="YSort" groups=["minimap_objects"]]
+position = Vector2( 480, 250 )
+script = ExtResource( 23 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2( 5, 5 )
@@ -1482,8 +1493,8 @@ camera_path = NodePath("../../playercam")
 [node name="Minimap" parent="CanvasLayer" instance=ExtResource( 7 )]
 margin_left = -2.0
 margin_top = -1.0
-margin_right = -2.0
-margin_bottom = -1.0
+margin_right = -262.0
+margin_bottom = -121.0
 mouse_filter = 2
 player = NodePath("../../YSort/player")
 

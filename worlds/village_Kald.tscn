@@ -1049,6 +1049,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=141]
 
+[sub_resource type="RectangleShape2D" id=142]
+extents = Vector2( 806, 83.5 )
+
+[sub_resource type="RectangleShape2D" id=143]
+extents = Vector2( 119.5, 556.5 )
+
 [sub_resource type="Shader" id=72]
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -1173,12 +1179,6 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=142]
-extents = Vector2( 806, 83.5 )
-
-[sub_resource type="RectangleShape2D" id=143]
-extents = Vector2( 119.5, 556.5 )
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -1269,6 +1269,28 @@ color = Color( 1, 1, 1, 0 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/player"]
 remote_path = NodePath("../../../playercam")
 
+[node name="world" type="Area2D" parent="YSort"]
+collision_layer = 128
+collision_mask = 0
+input_pickable = false
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/world"]
+position = Vector2( 139, 369.5 )
+shape = SubResource( 142 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/world"]
+position = Vector2( -599.5, -108.5 )
+shape = SubResource( 143 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="YSort/world"]
+position = Vector2( 968, -130 )
+shape = SubResource( 143 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="YSort/world"]
+position = Vector2( 176, -645 )
+shape = SubResource( 142 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2( 5, 5 )
 transform = Transform2D( 1, 0, 0, 1, 5, 5 )
@@ -1305,27 +1327,8 @@ mouse_filter = 2
 anims/fade_to_black = SubResource( 118 )
 anims/fade_to_normal = SubResource( 119 )
 
-[node name="world" type="Area2D" parent="."]
-script = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="world"]
-position = Vector2( 139, 369.5 )
-shape = SubResource( 142 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="world"]
-position = Vector2( -599.5, -108.5 )
-shape = SubResource( 143 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="world"]
-position = Vector2( 968, -130 )
-shape = SubResource( 143 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="world"]
-position = Vector2( 176, -645 )
-shape = SubResource( 142 )
-
 [connection signal="body_entered" from="YSort/player/detection" to="YSort/player" method="_on_detection_body_entered"]
-[connection signal="area_entered" from="world" to="world" method="_on_Leave_area_entered"]
+[connection signal="area_entered" from="YSort/world" to="YSort/world" method="_on_Leave_area_entered"]
 
 [editable path="playercam"]
 [editable path="YSort/player"]
