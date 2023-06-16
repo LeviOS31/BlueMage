@@ -73,5 +73,3 @@ anims/fade_to_black = SubResource( 6 )
 anims/fade_to_normal = SubResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

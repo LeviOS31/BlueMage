@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/villageicon.png-e059177203ec41cf53b754424595a1f3.stex"
+path="res://.import/village1_without_outline.png-80cfe0fbb162f6bd7bca35a74be0f0c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/mapicons/villageicon.png"
-dest_files=[ "res://.import/villageicon.png-e059177203ec41cf53b754424595a1f3.stex" ]
+source_file="res://Action RPG Resources/World/village1_without_outline.png"
+dest_files=[ "res://.import/village1_without_outline.png-80cfe0fbb162f6bd7bca35a74be0f0c9.stex" ]
 
 [params]
 

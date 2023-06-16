@@ -13,9 +13,4 @@ func transition_to_normal():
 	$VBoxContainer/exitButton.hide()
 	animation.play("fade_to_normal")
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "fade_to_black":
-		emit_signal("transitioned")
-		animation.play("fade_to_normal")
-
 
