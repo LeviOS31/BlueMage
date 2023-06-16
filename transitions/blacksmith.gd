@@ -1,29 +1,27 @@
 extends Area2D
 
 signal entering
-signal transition
-
+signal tran
 var entered: bool = false
 
 func _ready():
 	pass # Replace with function body.
+	
 
 func _physics_process(delta):
 	if $"../../../transitionscene/Timer".time_left < 0.1 && $"../../../transitionscene/Timer".time_left > 0.00001:
-		emit_signal("transition")
+		emit_signal("tran")
 
 func _input(event):
 	if(event.is_action_pressed("Interact")):
 		if(entered == true):
 			emit_signal("entering");
 			$"../../../transitionscene".transition_to_black()
-			yield(self, "transition")
-			print("AAAAAA")
+			yield(self,"tran")
 			$"../../player".global_position = $exithouse.global_position;
 			$"../../../transitionscene/Timer".start(1)
 			yield($"../../../transitionscene/Timer", "timeout")
 			$"../../../transitionscene".transition_to_normal()
-			
 
 func _on_Blacksmith_area_entered(area):
 	entered = true
