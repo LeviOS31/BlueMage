@@ -156,3 +156,8 @@ func remove_item_in_inventory(selecteditem: Control, slot: Vector2):
 			if inventoryitemsslots.has(Vector2(slot.x + X_ctr, slot.y + Y_ctr)):
 				inventoryitemsslots.erase(Vector2(slot.x + X_ctr, slot.y + Y_ctr))
 	
+
+
+func _on_Panel_child_entered_tree(node):
+	for ctrl_Item in get_tree().get_nodes_in_group("items"):
+		add_signal_connections(ctrl_Item)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=2]
+[gd_scene load_steps=171 format=2]
 
 [ext_resource path="res://Action RPG Resources/World/WaterCliff.tres" type="Texture" id=1]
 [ext_resource path="res://newart/Floor_Tileset.png" type="Texture" id=2]
@@ -31,10 +31,11 @@
 [ext_resource path="res://village/imgs/furniture/displaycase_top.png" type="Texture" id=29]
 [ext_resource path="res://village/imgs/furniture/rugnormal3.png" type="Texture" id=30]
 [ext_resource path="res://village/imgs/furniture/stairs.png" type="Texture" id=31]
-[ext_resource path="res://village/imgs/shopitems/sword.png" type="Texture" id=32]
+[ext_resource path="res://village/scenes/ItemShop.tscn" type="PackedScene" id=32]
 [ext_resource path="res://village/imgs/shopitems/superhealthpotion.png" type="Texture" id=33]
 [ext_resource path="res://village/imgs/shopitems/healthpotion.png" type="Texture" id=34]
 [ext_resource path="res://village/imgs/shopitems/manapotion.png" type="Texture" id=35]
+[ext_resource path="res://village/imgs/shopitems/sword.png" type="Texture" id=36]
 
 [sub_resource type="ConvexPolygonShape2D" id=19]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -2154,31 +2155,6 @@ points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="TileSet" id=180]
-0/name = "tabletilemap.png 0"
-0/texture = ExtResource( 20 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 80, 48 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 1
-0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 144, Vector2( 0, 2 ), 50, Vector2( 1, 0 ), 16, Vector2( 1, 1 ), 56, Vector2( 1, 2 ), 24, Vector2( 2, 0 ), 186, Vector2( 2, 1 ), 146, Vector2( 2, 2 ), 48, Vector2( 3, 0 ), 152, Vector2( 3, 1 ), 18, Vector2( 3, 2 ), 26, Vector2( 4, 0 ), 56, Vector2( 4, 1 ), 26, Vector2( 4, 2 ), 50 ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 16, 16 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [ Vector3( 4, 0, 2 ), Vector3( 4, 1, 2 ), Vector3( 4, 2, 2 ) ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-
 [sub_resource type="Shader" id=72]
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -2351,6 +2327,12 @@ tile_set = SubResource( 116 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
+[node name="items" type="Node" parent="."]
+
+[node name="Sword" parent="items" instance=ExtResource( 32 )]
+position = Vector2( 297, 1299 )
+texture = ExtResource( 36 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="player" parent="YSort" groups=["Units"] instance=ExtResource( 9 )]
@@ -2452,10 +2434,6 @@ shape = SubResource( 149 )
 position = Vector2( 277, 1243 )
 texture = ExtResource( 28 )
 
-[node name="Sword" type="Sprite" parent="YSort/houses/Blacksmith/furniture"]
-position = Vector2( 297, 1299 )
-texture = ExtResource( 32 )
-
 [node name="DisplaycaseTop" type="Sprite" parent="YSort/houses/Blacksmith/furniture"]
 position = Vector2( 297, 1302 )
 texture = ExtResource( 29 )
@@ -2529,9 +2507,6 @@ margin_left = -5.0
 margin_top = -5.0
 margin_right = -5.0
 margin_bottom = -5.0
-mouse_filter = 1
-
-[node name="Panel" parent="CanvasLayer/Inventory" index="0"]
 mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
