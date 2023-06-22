@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://transitions/cave.gd" type="Script" id=1]
 [ext_resource path="res://Lighting.gd" type="Script" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Action RPG Resources/World/village1.png" type="Texture" id=21]
 [ext_resource path="res://transitions/village.gd" type="Script" id=22]
-[ext_resource path="res://UI/minimap/mapanchor.gd" type="Script" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=112]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -711,13 +710,12 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/village_Kald/StaticBody2D"]
 polygon = PoolVector2Array( 0, -38.9192, -35.8555, -38.9192, -35.8555, 12.9731, -71.711, -38.9192, -71.711, -103.785, -71.711, -129.731, -47.8073, -142.704, -17.9277, -152.434, 61.2531, -142.704, 88.1447, -115.136, 83.6627, -56.7572, 73.2049, -8.10817, 47.8073, 16.2163, 38.8434, 9.7298, 38.8434, -38.9192 )
 
-[node name="mapanchor" type="Node2D" parent="YSort" groups=["minimap_objects"]]
-position = Vector2( 480, 250 )
-script = ExtResource( 23 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2( 5, 5 )
 transform = Transform2D( 1, 0, 0, 1, 5, 5 )
+
+[node name="Minimap" parent="CanvasLayer" instance=ExtResource( 7 )]
+player = NodePath("../../YSort/player")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource( 20 )]
 visible = false
@@ -725,9 +723,6 @@ margin_left = -5.0
 margin_top = -5.0
 margin_right = -5.0
 margin_bottom = -5.0
-mouse_filter = 1
-
-[node name="Panel" parent="CanvasLayer/Inventory" index="0"]
 mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
@@ -739,14 +734,6 @@ margin_bottom = 176.0
 mouse_filter = 2
 script = ExtResource( 2 )
 camera_path = NodePath("../../playercam")
-
-[node name="Minimap" parent="CanvasLayer" instance=ExtResource( 7 )]
-margin_left = -2.0
-margin_top = -1.0
-margin_right = -262.0
-margin_bottom = -121.0
-mouse_filter = 2
-player = NodePath("../../YSort/player")
 
 [node name="LightSource" parent="." instance=ExtResource( 5 )]
 position = Vector2( 133, 88 )

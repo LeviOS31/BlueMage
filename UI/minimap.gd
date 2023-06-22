@@ -7,9 +7,8 @@ onready var grid = $MarginContainer/grid
 onready var playerM = $MarginContainer/grid/player
 onready var caveM = $MarginContainer/grid/cave
 onready var villageM = $MarginContainer/grid/village
-onready var anchorM = $MarginContainer/grid/anchor
 
-onready var icons = {"cave":caveM, "village":villageM, "anchor":anchorM}
+onready var icons = {"cave":caveM, "village":villageM}
 
 var grid_scale
 var marker = {}
@@ -29,17 +28,15 @@ func _process(delta):
 	if !player:
 		return
 	for item in marker:
-		if item.name != "mapanchor":
-			var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
-			if obj_pos.x > 60 || obj_pos.x < -60 || obj_pos.y > 60 || obj_pos.y < -60:
-				marker[item].visible = false
-			else:
-				marker[item].visible = true
-			obj_pos.x = clamp(obj_pos.x , 0, grid.rect_size.x)
-			obj_pos.y = clamp(obj_pos.y , 0, grid.rect_size.y)
-			marker[item].position = obj_pos
-		else:
-			var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
+		var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
+		
+		print(item.position)
+		
+		if obj_pos.x > 60 || obj_pos.x < -60 || obj_pos.y > 60 || obj_pos.y < -60:
 			marker[item].visible = false
-			marker[item].position = obj_pos
-			marker[item].scale = Vector2(2.1, 2.1)
+		else:
+			marker[item].visible = true
+		
+		obj_pos.x = clamp(obj_pos.x , 0, grid.rect_size.x)
+		obj_pos.y = clamp(obj_pos.y , 0, grid.rect_size.y)
+		marker[item].position = obj_pos

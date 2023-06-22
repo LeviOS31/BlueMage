@@ -5,6 +5,7 @@ var maxhealth = 100
 var maxmagi = 100
 var defence = 10
 var weakness = "Poison"
+var coins = 0
 
 var inv_data = {}
 var skills = {}

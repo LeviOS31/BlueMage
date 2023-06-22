@@ -1131,10 +1131,6 @@ script = ExtResource( 4 )
 camera_path = NodePath("../../playercam")
 
 [node name="Minimap" parent="CanvasLayer" instance=ExtResource( 2 )]
-margin_left = -2.0
-margin_top = -2.0
-margin_right = -2.0
-margin_bottom = -2.0
 player = NodePath("../../YSort/player")
 
 [node name="transitionscene" parent="." instance=ExtResource( 5 )]
