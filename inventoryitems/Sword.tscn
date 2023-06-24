@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://UI/inventory/img/sword.png" type="Texture" id=1]
+[ext_resource path="res://inventoryitems/script/Item.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 32 )
@@ -11,6 +12,8 @@ anchor_bottom = 1.0
 margin_right = -304.0
 margin_bottom = -116.0
 rect_min_size = Vector2( 16, 64 )
+script = ExtResource( 2 )
+respath = "res://inventoryitems/Sword.tscn"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

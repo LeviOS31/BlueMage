@@ -30,7 +30,7 @@ func _ready():
 		$enemycontrol/enemyplatform.add_child(enemy)
 		enemy.battle()
 		#enemy.position = Vector2(76,2)
-		enemy.scale = Vector2(1.2,1.2)
+		enemy.scale = Vector2(1.5,1.5)
 		enemy.start()
 	var i = 1;
 	print(Playerdata.skills);
@@ -76,10 +76,9 @@ func execute_turn():
 			num.get_node("Label").text = str(player.damage)
 		"MAGI":
 			player.Magi()
-			if player.damage > 0:
-				$Camera2D/Hud/HudBlueBanner/battletext.text = "You used " + player.chosen.Display_Name + " and dealt " + str(player.damage) + " damage"
-			else:
+			if player.damage == 0:
 				$Camera2D/Hud/HudBlueBanner/battletext.text = "You used " + player.chosen.Display_Name + " and missed"
+			
 			yield($playercontrol/playerplatform/player/AniPlayer, "animation_finished")
 		"STATUS":
 			player.Status()
@@ -91,22 +90,32 @@ func execute_turn():
 		print(newdamage)
 		enemy.health -= newdamage
 		print(enemy.health)
+		$Camera2D/Hud/HudBlueBanner/battletext.text = "You used " + player.chosen.Display_Name + " and dealt " + str(newdamage) + " damage"
 		$enemycontrol/enemyplatform/enemyhealth.value = enemy.health
 
 		var num = damagenumbers.instance()
 		enemy.add_child(num)
 		num.get_node("Label").text = str(newdamage)
 	$playercontrol/playerplatform/playermagi.value = player.magi
-
+	print(0)
+	$TurnTimer.start(1)
+	yield($TurnTimer, "timeout")
+	print(1)
+	$TurnTimer.start(1)
+	yield($TurnTimer, "timeout")
+	print(2)
+	
+	if enemy.health < 1:
+		battleend()
+		return
+	
 	match enemy.chosen.Type:
 		"ATTACK":
 			enemy.Attack()
-			if enemy.damage > 0:
-				$Camera2D/Hud/HudBlueBanner/battletext.text = "The enemy used " + enemy.chosen.Display_Name + " and dealt " + str(enemy.damage) + " damage"
-			else:
-				$Camera2D/Hud/HudBlueBanner/battletext.text = "The enemy used " + enemy.chosen.Display_Name + " and missed"
 			print(Playerdata.health)
 			yield(enemy.get_node("AniPlayer"), "animation_finished")
+			if enemy.damage == 0:
+				$Camera2D/Hud/HudBlueBanner/battletext.text = "The enemy used " + enemy.chosen.Display_Name + " and missed"
 		"STATUS":
 			enemy.Status()
 			$Camera2D/Hud/HudBlueBanner/battletext.text = "The enemy used " + enemy.chosen.Display_Name
@@ -118,7 +127,9 @@ func execute_turn():
 		Playerdata.health -= newdamage2
 		print(Playerdata.health)
 		$playercontrol/playerplatform/playerhealth.value = Playerdata.health
-
+		
+		$Camera2D/Hud/HudBlueBanner/battletext.text = "The enemy used " + enemy.chosen.Display_Name + " and dealt " + str(newdamage2) + " damage"
+		
 		var num2 = damagenumbers.instance()
 		player.add_child(num2)
 		num2.get_node("Label").text = str(newdamage2)
@@ -128,13 +139,35 @@ func execute_turn():
 	turns += 1
 	player.damage = 0
 	enemy.damage = 0
+	print(0)
+	$TurnTimer.start(1)
+	yield($TurnTimer, "timeout")
+	print(1)
+	$TurnTimer.start(1)
+	yield($TurnTimer, "timeout")
+	print(2)
 	
-	if enemy.health < 1:
+	emit_signal("playerturn")
+	
+
+func battleend():
 		Global.battlefinish = true
+		
+		var gainedSestertii = round(rand_range(enemy.MinSestertii, enemy.MaxSestertii))
+		var gainedDenarii = round(rand_range(enemy.MinDenarii, enemy.MaxDenarii))
+		var gainedQuinarii = round(rand_range(enemy.MinQuinarii, enemy.MaxQuinarii))
+		
+		$Camera2D/Hud/HudBlueBanner/battletext.text = "You won the battle and gained " + str(gainedSestertii) + " Sesterii, " + str(gainedDenarii) + " Denarii, " + str(gainedQuinarii) + " Quinarii"
+		
+		Playerdata.Sestertii += gainedSestertii
+		Playerdata.Denarii += gainedDenarii
+		Playerdata.Quinarii += gainedQuinarii
+		
+		$TurnTimer.start(3)
+		yield($TurnTimer, "timeout")
+		
+		#enemy.death()
 		get_tree().change_scene(Global.currentlevel)
-	else:
-		emit_signal("playerturn")
-	
 
 func _on_starttimer_timeout():
 	$start.play("load");
@@ -146,3 +179,4 @@ func _on_magi1_pressed(extra_arg_0):
 	if state == Tplayer:
 		player.chosen = Playerdata.skills[button.get_child(0).text]
 		emit_signal("enemyturn");
+		

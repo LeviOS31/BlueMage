@@ -25,5 +25,5 @@ func _on_inventory_pressed():
 	$"../inventory".visible = true;
 
 func _on_flee_pressed():
-	if randf() > 0.3:
-		get_tree().change_scene("res://world.tscn")
+	if randf() < 0.3:
+		get_tree().change_scene(Global.currentlevel)

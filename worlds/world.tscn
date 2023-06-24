@@ -482,7 +482,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=51]
 
 [sub_resource type="RectangleShape2D" id=73]
-extents = Vector2( 65.735, 36.4868 )
+extents = Vector2( 54.5302, 40.5409 )
 
 [sub_resource type="Shader" id=115]
 code = "shader_type canvas_item;
@@ -663,6 +663,7 @@ remote_path = NodePath("../../../playercam")
 
 [node name="ghost" parent="YSort/enemies" instance=ExtResource( 8 )]
 position = Vector2( 1059, -338 )
+scale = Vector2( 1, 1 )
 
 [node name="Sprite" parent="YSort/enemies/ghost" index="4"]
 frame = 8
@@ -696,7 +697,7 @@ input_pickable = false
 script = ExtResource( 22 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/village_Kald"]
-position = Vector2( 5.97577, -10.5406 )
+position = Vector2( 5.22882, -6.48653 )
 shape = SubResource( 73 )
 
 [node name="Village1" type="Sprite" parent="YSort/village_Kald"]
@@ -708,7 +709,7 @@ texture = ExtResource( 21 )
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/village_Kald/StaticBody2D"]
-polygon = PoolVector2Array( 0, -38.9192, -35.8555, -38.9192, -35.8555, 12.9731, -71.711, -38.9192, -71.711, -103.785, -71.711, -129.731, -47.8073, -142.704, -17.9277, -152.434, 61.2531, -142.704, 88.1447, -115.136, 83.6627, -56.7572, 73.2049, -8.10817, 47.8073, 16.2163, 38.8434, 9.7298, 38.8434, -38.9192 )
+polygon = PoolVector2Array( 0, -21.0812, -31.3735, -21.0812, -31.3735, 8.10817, -37.3495, 11.3514, -50.7953, 1.62164, -71.711, -42.1625, -71.711, -103.785, -68.723, -126.487, -47.8073, -142.704, -20.9157, -147.569, -7.46991, -132.974, 20.9156, -129.731, 58.2651, -141.082, 80.6747, -123.244, 80.6747, -56.7572, 68.723, -11.3514, 47.8073, 12.9731, 38.8434, 9.7298, 38.8434, -21.0812 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2( 5, 5 )
@@ -724,6 +725,15 @@ margin_top = -5.0
 margin_right = -5.0
 margin_bottom = -5.0
 mouse_filter = 1
+
+[node name="GoldCoin" parent="CanvasLayer/Inventory" index="3"]
+frame = 2
+
+[node name="SilverCoin" parent="CanvasLayer/Inventory" index="4"]
+frame = 0
+
+[node name="BronzeCoin" parent="CanvasLayer/Inventory" index="5"]
+frame = 6
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource( 53 )

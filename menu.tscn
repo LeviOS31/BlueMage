@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Action RPG Resources/Player/newplayer/Player/Player.png" type="Texture" id=2]
@@ -6,22 +6,158 @@
 [ext_resource path="res://newart/sun.png" type="Texture" id=4]
 [ext_resource path="res://newart/Grass_Start.png" type="Texture" id=5]
 [ext_resource path="res://Action RPG Resources/start screen/Cloud.png" type="Texture" id=6]
+[ext_resource path="res://Action RPG Resources/start screen/bird-Sheet.png" type="Texture" id=7]
 [ext_resource path="res://clouds.gd" type="Script" id=8]
 [ext_resource path="res://birds.gd" type="Script" id=9]
-[ext_resource path="res://Action RPG Resources/start screen/Bird_Start_3.png" type="Texture" id=10]
-[ext_resource path="res://Action RPG Resources/start screen/Bird_Start.png" type="Texture" id=11]
-[ext_resource path="res://Action RPG Resources/start screen/Bird_Start_2.png" type="Texture" id=12]
+[ext_resource path="res://Action RPG Resources/start screen/bird-Sheet3.png" type="Texture" id=10]
+[ext_resource path="res://Action RPG Resources/start screen/bird-Sheet2.png" type="Texture" id=11]
 [ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer03.png" type="Texture" id=13]
 [ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer01.png" type="Texture" id=14]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=24]
 [ext_resource path="res://transitionscene.tscn" type="PackedScene" id=25]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 10 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 10 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
-"name": "animate",
-"speed": 8.0
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 11 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 11 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 11 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 11 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 11 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 11 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 10 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 10 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 10 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 10 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 10 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 10 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=48]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
 } ]
 
 [sub_resource type="AtlasTexture" id=5]
@@ -149,223 +285,56 @@ texture = ExtResource( 6 )
 [node name="birds" type="KinematicBody2D" parent="."]
 script = ExtResource( 9 )
 
-[node name="birdsanimation" type="AnimatedSprite" parent="birds"]
-position = Vector2( -11, 45 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
-playing = true
-
-[node name="birdsanimation2" type="AnimatedSprite" parent="birds"]
-position = Vector2( -19, 35 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
-playing = true
-
-[node name="birdsanimation3" type="AnimatedSprite" parent="birds"]
-position = Vector2( -73, 42 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
-playing = true
-
-[node name="birdsanimation4" type="AnimatedSprite" parent="birds"]
-position = Vector2( -58, 23 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
-playing = true
-
-[node name="birdsanimation5" type="AnimatedSprite" parent="birds"]
-position = Vector2( -118, 20 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-playing = true
-
-[node name="birdsanimation6" type="AnimatedSprite" parent="birds"]
-position = Vector2( -259, 47 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-playing = true
-
-[node name="birdsanimation7" type="AnimatedSprite" parent="birds"]
-position = Vector2( -267, 28 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation8" type="AnimatedSprite" parent="birds"]
-position = Vector2( -313, 52 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation9" type="AnimatedSprite" parent="birds"]
-position = Vector2( -293, 13 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
+[node name="Bird" type="AnimatedSprite" parent="birds"]
+position = Vector2( -8, 50 )
+frames = SubResource( 25 )
 frame = 2
 playing = true
 
-[node name="birdsanimation10" type="AnimatedSprite" parent="birds"]
-position = Vector2( -391, 15 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 2
+[node name="Bird2" type="AnimatedSprite" parent="birds"]
+position = Vector2( -65, 10 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 17 )
+frame = 6
 playing = true
 
-[node name="birdsanimation11" type="AnimatedSprite" parent="birds"]
-position = Vector2( -417, 37 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
+[node name="Bird4" type="AnimatedSprite" parent="birds"]
+position = Vector2( -205, 25 )
+scale = Vector2( 0.75, 0.75 )
+z_index = -1
+frames = SubResource( 17 )
+frame = 6
 playing = true
 
-[node name="birdsanimation12" type="AnimatedSprite" parent="birds"]
-position = Vector2( -431, 16 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
+[node name="Bird6" type="AnimatedSprite" parent="birds"]
+position = Vector2( -344, 15 )
+frames = SubResource( 40 )
+frame = 6
 playing = true
 
-[node name="birdsanimation13" type="AnimatedSprite" parent="birds"]
-position = Vector2( -464, 40 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
+[node name="Bird7" type="AnimatedSprite" parent="birds"]
+position = Vector2( -407, 50 )
+scale = Vector2( 0.4, 0.4 )
+z_index = -1
+frames = SubResource( 17 )
+frame = 6
 playing = true
 
-[node name="birdsanimation15" type="AnimatedSprite" parent="birds"]
-position = Vector2( -511, 49 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation16" type="AnimatedSprite" parent="birds"]
-position = Vector2( -520, 30 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation17" type="AnimatedSprite" parent="birds"]
-position = Vector2( -546, 13 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation18" type="AnimatedSprite" parent="birds"]
-position = Vector2( -547, 29 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation19" type="AnimatedSprite" parent="birds"]
-position = Vector2( -596, 25 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 2
-playing = true
-
-[node name="birdsanimation20" type="AnimatedSprite" parent="birds"]
-position = Vector2( -588, 36 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 2
-playing = true
-
-[node name="birdsanimation21" type="AnimatedSprite" parent="birds"]
-position = Vector2( -660, 20 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 2
-playing = true
-
-[node name="birdsanimation22" type="AnimatedSprite" parent="birds"]
-position = Vector2( -637, 25 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 1
-playing = true
-
-[node name="birdsanimation23" type="AnimatedSprite" parent="birds"]
-position = Vector2( -651, 34 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-playing = true
-
-[node name="birdsanimation24" type="AnimatedSprite" parent="birds"]
-position = Vector2( -676, 26 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation25" type="AnimatedSprite" parent="birds"]
-position = Vector2( -733, 21 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-playing = true
-
-[node name="birdsanimation26" type="AnimatedSprite" parent="birds"]
-position = Vector2( -721, 36 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation27" type="AnimatedSprite" parent="birds"]
-position = Vector2( -748, 27 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
-frame = 3
-playing = true
-
-[node name="birdsanimation14" type="AnimatedSprite" parent="birds"]
-position = Vector2( -493, 18 )
-scale = Vector2( 0.359375, 0.359375 )
-frames = SubResource( 1 )
-animation = "animate"
+[node name="Bird9" type="AnimatedSprite" parent="birds"]
+position = Vector2( -564, 24 )
+scale = Vector2( 0.8, 0.8 )
+frames = SubResource( 48 )
 playing = true
 
 [node name="tree" type="AnimatedSprite" parent="."]
 position = Vector2( 305, 72 )
 scale = Vector2( 2.75, 2.75 )
 frames = SubResource( 2 )
+frame = 2
 playing = true
 
 [node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( -2, 1 )
 script = ExtResource( 24 )
 
 [node name="Player" type="Sprite" parent="player"]

@@ -6,6 +6,5 @@
 position = Vector2( 160, 90 )
 scale = Vector2( 0.991907, 0.981942 )
 current = true
-smoothing_enabled = true
 smoothing_speed = 4.0
 script = ExtResource( 1 )

@@ -21,6 +21,8 @@ var velocity = Vector2.ZERO
 func _ready():
 	animation.active = true
 	Coordinates.PlacePlayer()
+	yield(get_tree().create_timer(0.2), "timeout")
+	$"../../playercam".smoothing_enabled = true
 	
 
 func _physics_process(delta):

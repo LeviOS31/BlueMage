@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -16,6 +16,14 @@ var weakness = "fire"
 var chosen
 var damage = 0
 var duration = 0
+
+var MinSestertii : int = 0
+var MinDenarii : int = 0
+var MinQuinarii : int = 4
+
+var MaxSestertii : int = 0
+var MaxDenarii : int = 1
+var MaxQuinarii : int = 14
 
 # Called when the node enters the scene tree for the first time.
 func start():

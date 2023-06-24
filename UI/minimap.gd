@@ -30,8 +30,6 @@ func _process(delta):
 	for item in marker:
 		var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.rect_size / 2
 		
-		print(item.position)
-		
 		if obj_pos.x > 60 || obj_pos.x < -60 || obj_pos.y > 60 || obj_pos.y < -60:
 			marker[item].visible = false
 		else:

@@ -6,6 +6,7 @@ extends Node
 # var b = "text"
 var maxhealth = 100
 var health = 100
+var maxmagi = 100
 var magi = 100
 var missC = 1.00
 var DMGC = 1.00
@@ -16,6 +17,14 @@ var chosen
 var damage = 0
 var purple = false
 var duration = 0
+
+var MinSestertii : int = 0
+var MinDenarii : int = 0
+var MinQuinarii : int = 3
+
+var MaxSestertii : int = 0
+var MaxDenarii : int = 0
+var MaxQuinarii : int = 6
 
 # Called when the node enters the scene tree for the first time.
 func start():
@@ -80,4 +89,8 @@ func idle(name):
 		$AniPlayer.play("idle_purple")
 	else:
 		$AniPlayer.play("idle_white_r")
+
+func death():
+	$AniPlayer.play("death")
+	yield($AniPlayer, "animation_finished")
 

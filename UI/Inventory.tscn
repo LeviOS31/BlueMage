@@ -1,36 +1,240 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://UI/inventory/img/Grid.png" type="Texture" id=1]
 [ext_resource path="res://Action RPG Resources/font/alphbeta.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://UI/Misc/GoldCoin.png" type="Texture" id=3]
-[ext_resource path="res://UI/Misc/CopperCoin.png" type="Texture" id=4]
+[ext_resource path="res://UI/Misc/GoldCoinani.png" type="Texture" id=3]
+[ext_resource path="res://UI/Misc/CopperCoinani.png" type="Texture" id=4]
 [ext_resource path="res://UI/Inventory.gd" type="Script" id=5]
 [ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.3/BAG.png" type="Texture" id=6]
-[ext_resource path="res://UI/Misc/SilverCoin.png" type="Texture" id=7]
+[ext_resource path="res://UI/Misc/SilverCoinani.png" type="Texture" id=7]
+[ext_resource path="res://UI/inventory/img/ShopBG.png" type="Texture" id=8]
+[ext_resource path="res://battle/art/hud/Inventory_Tab_Butten_Back_Hover.png" type="Texture" id=9]
+[ext_resource path="res://battle/art/hud/Inventory_Tab_Butten_Back_UnpressedUnpressed.png" type="Texture" id=10]
+[ext_resource path="res://UI/Misc/CopperCoinSmall.png" type="Texture" id=12]
+[ext_resource path="res://UI/Misc/GoldCoinSmall.png" type="Texture" id=13]
+[ext_resource path="res://UI/Misc/SilverCoinSmall.png" type="Texture" id=14]
+[ext_resource path="res://UI/shop.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFont" id=32]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 9
+font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 64 )
 
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
 [sub_resource type="DynamicFont" id=2]
 size = 17
 font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 4 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 4 )
+region = Rect2( 160, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 4 )
+region = Rect2( 176, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 
-[node name="Panel" type="ColorRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -48.0
-margin_top = -58.0
-margin_right = 64.0
-margin_bottom = 70.0
-mouse_filter = 1
-color = Color( 1, 1, 1, 0 )
+[node name="shop" type="Control" parent="."]
+visible = false
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 0.978
+margin_left = -1.52588e-05
+margin_bottom = -0.0400085
+script = ExtResource( 15 )
+
+[node name="TextureRect" type="TextureRect" parent="shop"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
+
+[node name="exit" type="TextureButton" parent="shop"]
+margin_left = 57.0
+margin_top = 9.0
+margin_right = 73.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+
+[node name="name" type="Label" parent="shop"]
+anchor_top = 0.08
+anchor_right = 1.0
+anchor_bottom = 0.155
+margin_left = 12.0
+margin_top = 11.92
+margin_right = -9.0
+margin_bottom = 12.72
+custom_fonts/font = SubResource( 32 )
+text = "Name"
+align = 1
+valign = 1
+
+[node name="GoldCost" type="Sprite" parent="shop"]
+position = Vector2( 17, 38 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Cost" type="Label" parent="shop/GoldCost"]
+margin_left = 10.0
+margin_right = 50.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 33 )
+text = "00"
+
+[node name="SilverCost" type="Sprite" parent="shop"]
+position = Vector2( 17, 47 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Cost" type="Label" parent="shop/SilverCost"]
+margin_left = 10.0
+margin_right = 50.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 33 )
+text = "00"
+
+[node name="BronzeCost" type="Sprite" parent="shop"]
+position = Vector2( 17, 56 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Cost" type="Label" parent="shop/BronzeCost"]
+margin_left = 10.0
+margin_right = 50.0
+margin_bottom = 9.0
+custom_fonts/font = SubResource( 33 )
+text = "00"
 
 [node name="Bag" type="Sprite" parent="."]
 position = Vector2( 152.5, 89.6875 )
@@ -50,8 +254,10 @@ region_rect = Rect2( 0, 0, 112, 128 )
 position = Vector2( 56, 64 )
 shape = SubResource( 1 )
 
-[node name="GoldCoin" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+[node name="GoldCoin" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+frame = 5
+playing = true
 centered = false
 
 [node name="amount" type="Label" parent="GoldCoin"]
@@ -62,9 +268,11 @@ custom_fonts/font = SubResource( 2 )
 text = "00"
 valign = 1
 
-[node name="SilverCoin" type="Sprite" parent="."]
+[node name="SilverCoin" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 16 )
-texture = ExtResource( 7 )
+frames = SubResource( 18 )
+frame = 3
+playing = true
 centered = false
 
 [node name="amount" type="Label" parent="SilverCoin"]
@@ -75,12 +283,14 @@ custom_fonts/font = SubResource( 2 )
 text = "00"
 valign = 1
 
-[node name="CopperCoin" type="Sprite" parent="."]
+[node name="BronzeCoin" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 32 )
-texture = ExtResource( 4 )
+frames = SubResource( 31 )
+frame = 4
+playing = true
 centered = false
 
-[node name="amount" type="Label" parent="CopperCoin"]
+[node name="amount" type="Label" parent="BronzeCoin"]
 margin_left = 16.0
 margin_right = 48.0
 margin_bottom = 16.0
@@ -88,4 +298,18 @@ custom_fonts/font = SubResource( 2 )
 text = "00"
 valign = 1
 
+[node name="Panel" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -58.0
+margin_right = 64.0
+margin_bottom = 70.0
+mouse_filter = 1
+color = Color( 1, 1, 1, 0 )
+
+[connection signal="visibility_changed" from="shop" to="shop" method="_on_shop_visibility_changed"]
+[connection signal="pressed" from="shop/exit" to="." method="_on_exit_pressed"]
 [connection signal="child_entered_tree" from="Panel" to="." method="_on_Panel_child_entered_tree"]
