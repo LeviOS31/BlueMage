@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://menu.gd" type="Script" id=1]
 [ext_resource path="res://Action RPG Resources/Player/newplayer/Player/Player.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://birds.gd" type="Script" id=9]
 [ext_resource path="res://Action RPG Resources/start screen/bird-Sheet3.png" type="Texture" id=10]
 [ext_resource path="res://Action RPG Resources/start screen/bird-Sheet2.png" type="Texture" id=11]
+[ext_resource path="res://music_SFX/Our-Mountain_v003_Looping.mp3" type="AudioStream" id=12]
 [ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer03.png" type="Texture" id=13]
 [ext_resource path="res://newart/Free DEMO Pixel Skies Background pack by Digital Moons/Parallax Pixel Skies 240x135px/Demo 01 Parallax Pixel Sky/demo01_PixelSky_layer01.png" type="Texture" id=14]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=24]
@@ -288,14 +289,13 @@ script = ExtResource( 9 )
 [node name="Bird" type="AnimatedSprite" parent="birds"]
 position = Vector2( -8, 50 )
 frames = SubResource( 25 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Bird2" type="AnimatedSprite" parent="birds"]
 position = Vector2( -65, 10 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 17 )
-frame = 6
 playing = true
 
 [node name="Bird4" type="AnimatedSprite" parent="birds"]
@@ -303,13 +303,11 @@ position = Vector2( -205, 25 )
 scale = Vector2( 0.75, 0.75 )
 z_index = -1
 frames = SubResource( 17 )
-frame = 6
 playing = true
 
 [node name="Bird6" type="AnimatedSprite" parent="birds"]
 position = Vector2( -344, 15 )
 frames = SubResource( 40 )
-frame = 6
 playing = true
 
 [node name="Bird7" type="AnimatedSprite" parent="birds"]
@@ -317,20 +315,20 @@ position = Vector2( -407, 50 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 17 )
-frame = 6
 playing = true
 
 [node name="Bird9" type="AnimatedSprite" parent="birds"]
 position = Vector2( -564, 24 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 48 )
+frame = 1
 playing = true
 
 [node name="tree" type="AnimatedSprite" parent="."]
-position = Vector2( 305, 72 )
-scale = Vector2( 2.75, 2.75 )
+position = Vector2( 313, 70 )
+scale = Vector2( 2.7, 2.7 )
 frames = SubResource( 2 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="player" type="KinematicBody2D" parent="."]
@@ -341,7 +339,7 @@ script = ExtResource( 24 )
 position = Vector2( 260, 143 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
-hframes = 65
+hframes = 73
 frame = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
@@ -374,13 +372,15 @@ scale = Vector2( 2.15625, 2.15625 )
 texture = ExtResource( 5 )
 offset = Vector2( 23.6522, -20.4058 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -10.0
+autoplay = true
+
 [node name="transitionscene" parent="." instance=ExtResource( 25 )]
 
-[node name="Timer" parent="transitionscene" index="3"]
-wait_time = 1.1
-one_shot = true
-
 [connection signal="timeout" from="player/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="pressed" from="transitionscene/VBoxContainer/startButton" to="." method="_on_startButton_pressed"]
 [connection signal="pressed" from="transitionscene/VBoxContainer/exitButton" to="." method="_on_exitButton_pressed"]
 

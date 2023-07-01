@@ -9,7 +9,11 @@ onready var movetoggle = false
 onready var timer = $player/Timer
 
 func _ready():
-	$transitionscene/VBoxContainer/startButton.grab_focus()
+	$transitionscene.transition_to_normal()
+#	$transitionscene/VBoxContainer/startButton.grab_focus()
+	$transitionscene/VBoxContainer.show()
+	$transitionscene/VBoxContainer/startButton.show()
+	$transitionscene/VBoxContainer/exitButton.show()
 
 func _physics_process(delta):
 	clouds.move(delta)
@@ -19,7 +23,7 @@ func _physics_process(delta):
 	if movetoggle == true:
 		moveplayer()
 	if $transitionscene/Timer.time_left < 0.1 && $transitionscene/Timer.time_left > 0.00001:
-		get_tree().change_scene("res://worlds/world.tscn")
+		get_tree().change_scene("res://worlds/StarterWoods.tscn")
 
 
 func checkpressed():
@@ -42,3 +46,7 @@ func _on_startButton_pressed():
 func _on_Timer_timeout():
 	$transitionscene.transition_to_black()
 
+
+
+#func _on_AudioStreamPlayer_finished():
+#	pass # Replace with function body.

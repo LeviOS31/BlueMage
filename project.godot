@@ -45,7 +45,8 @@ _global_script_class_icons={
 [application]
 
 config/name="blue mage"
-run/main_scene="res://menu.tscn"
+run/main_scene="res://transitions/splashscreen.tscn"
+boot_splash/show_image=false
 config/icon="res://Action RPG Resources/Logo.png"
 
 [autoload]

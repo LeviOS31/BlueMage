@@ -18,10 +18,11 @@ func Magi():
 	randomize()
 	print(chosen);
 	$AniPlayer.play(chosen.Animation)
+	print(chosen.Animation)
 	magi -= chosen.MagiCost
 	if rand_range(0,100) < chosen.Hitprecentage:
 		damage = chosen.Damage
-		print(chosen.Damage)
+		print(chosen.Damage) 
 	else:
 		print("miss")
 		damage = 0

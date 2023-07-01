@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -28,8 +28,7 @@ var MaxQuinarii : int = 14
 # Called when the node enters the scene tree for the first time.
 func start():
 	randomize()
-	$Sprite.scale = Vector2(2,2)
-	position = position + Vector2(-5,-20)
+	self.position = position + Vector2(-5,-20)
 	$AniPlayer.connect("animation_finished", self, "idle")
 
 func choose(Phealth, turnnum):

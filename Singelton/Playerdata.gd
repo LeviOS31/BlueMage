@@ -6,9 +6,9 @@ var maxmagi: int = 100
 var defence: int = 10
 var weakness: String = "Poison"
 
-export var Sestertii: int = 10
-export var Denarii: int = 10
-export var Quinarii: int = 10
+export var Sestertii: int = 0
+export var Denarii: int = 0
+export var Quinarii: int = 0
 
 var inv_data: Dictionary = {}
 var skills: Dictionary = {}
@@ -21,3 +21,5 @@ func _ready():
 	file.close()
 	inv_data = json.result
 	skills["Fireball"] = Skills.skill_data.Fireball;
+	skills["Iceball"] = Skills.skill_data.Iceball;
+	skills["Stoneball"] = Skills.skill_data.Stoneball;

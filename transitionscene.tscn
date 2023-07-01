@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://transitionscene.gd" type="Script" id=1]
-[ext_resource path="res://Action RPG Resources/UI/menu.tres" type="Theme" id=2]
+[ext_resource path="res://UI/buttons/QuitUnSelected.tres" type="StyleBox" id=2]
 [ext_resource path="res://Action RPG Resources/UI/blink.tres" type="Material" id=3]
+[ext_resource path="res://UI/buttons/QuitSelected.tres" type="StyleBox" id=4]
+[ext_resource path="res://UI/buttons/QuitPressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://UI/buttons/StartPressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://UI/buttons/StartSelected.tres" type="StyleBox" id=7]
+[ext_resource path="res://UI/buttons/StartUnSelected.tres" type="StyleBox" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -27,42 +36,51 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [node name="transitionscene" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="Control" parent="."]
 material = ExtResource( 3 )
 margin_left = 13.0
-margin_top = 79.0
+margin_top = 69.0
 margin_right = 74.0
 margin_bottom = 119.0
 
 [node name="startButton" type="Button" parent="VBoxContainer"]
+anchor_bottom = 0.14
+margin_top = -4.0
 margin_right = 61.0
-margin_bottom = 17.5145
+margin_bottom = 10.0
 focus_neighbour_top = NodePath("../exitButton")
-theme = ExtResource( 2 )
-text = "Start"
+focus_mode = 0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = ExtResource( 8 )
 
 [node name="exitButton" type="Button" parent="VBoxContainer"]
-margin_top = 21.0
+anchor_bottom = 0.14
+margin_top = 18.0
 margin_right = 61.0
-margin_bottom = 38.5145
+margin_bottom = 32.0
 focus_neighbour_bottom = NodePath("../startButton")
-theme = ExtResource( 2 )
-text = "Quit"
+focus_mode = 0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false

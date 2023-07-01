@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Our-Mountain_v003_Looping.mp3-37494594fbe577e99f4f45959e448423.mp3str"
+
+[deps]
+
+source_file="res://music_SFX/Our-Mountain_v003_Looping.mp3"
+dest_files=[ "res://.import/Our-Mountain_v003_Looping.mp3-37494594fbe577e99f4f45959e448423.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -13,6 +13,34 @@
     "MagiCost": 10,
     "Display_Name": "Fireball"
   },
+  "Iceball": {
+    "Type": "MAGI",
+    "Damage": 15,
+    "Hitprecentage": 80,
+    "Health": "N/A",
+    "ModulateMiss": "N/A",
+    "ModulateDMG": "N/A",
+    "ModulateDFN": "N/A",
+    "Weakness": "Ice",
+    "Animation": "Iceball",
+    "Duration": "N/A",
+    "MagiCost": 10,
+    "Display_Name": "Iceball"
+  },
+  "Stoneball": {
+    "Type": "MAGI",
+    "Damage": 25,
+    "Hitprecentage": 70,
+    "Health": "N/A",
+    "ModulateMiss": "N/A",
+    "ModulateDMG": "N/A",
+    "ModulateDFN": "N/A",
+    "Weakness": "Blunt",
+    "Animation": "Stoneball",
+    "Duration": "N/A",
+    "MagiCost": 10,
+    "Display_Name": "Stoneball"
+  },
   "FullHeal": {
     "Type": "HEAL",
     "Damage": "N/A",
