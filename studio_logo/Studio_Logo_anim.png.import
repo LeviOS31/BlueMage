@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/QuitFocus.png-b40282533d1ef9bdf947e4eadafe6b46.stex"
+path="res://.import/Studio_Logo_anim.png-8e264bda8958a357158cbd101de409a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/buttons/QuitFocus.png"
-dest_files=[ "res://.import/QuitFocus.png-b40282533d1ef9bdf947e4eadafe6b46.stex" ]
+source_file="res://studio_logo/Studio_Logo_anim.png"
+dest_files=[ "res://.import/Studio_Logo_anim.png-8e264bda8958a357158cbd101de409a9.stex" ]
 
 [params]
 

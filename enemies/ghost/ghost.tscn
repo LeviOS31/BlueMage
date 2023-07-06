@@ -290,7 +290,7 @@ color = Color( 0.266667, 0.266667, 0.266667, 0.705882 )
 position = Vector2( 0.5, -4 )
 texture = ExtResource( 1 )
 hframes = 44
-frame = 23
+frame = 37
 
 [node name="AniPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle_white_r"

@@ -1,17 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://transitionscene.gd" type="Script" id=1]
-[ext_resource path="res://UI/buttons/QuitUnSelected.tres" type="StyleBox" id=2]
+[ext_resource path="res://UI/buttons/Quitunselected.png" type="Texture" id=2]
 [ext_resource path="res://Action RPG Resources/UI/blink.tres" type="Material" id=3]
-[ext_resource path="res://UI/buttons/QuitSelected.tres" type="StyleBox" id=4]
-[ext_resource path="res://UI/buttons/QuitPressed.tres" type="StyleBox" id=5]
-[ext_resource path="res://UI/buttons/StartPressed.tres" type="StyleBox" id=6]
-[ext_resource path="res://UI/buttons/StartSelected.tres" type="StyleBox" id=7]
-[ext_resource path="res://UI/buttons/StartUnSelected.tres" type="StyleBox" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=9]
+[ext_resource path="res://UI/buttons/Quitselected.png" type="Texture" id=4]
+[ext_resource path="res://UI/buttons/startunselected.png" type="Texture" id=5]
+[ext_resource path="res://UI/buttons/Startselected.png" type="Texture" id=6]
+[ext_resource path="res://UI/buttons/Quitpressed.png" type="Texture" id=7]
+[ext_resource path="res://UI/buttons/startpressed.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -52,29 +48,29 @@ margin_top = 69.0
 margin_right = 74.0
 margin_bottom = 119.0
 
-[node name="startButton" type="Button" parent="VBoxContainer"]
+[node name="startButton" type="TextureButton" parent="VBoxContainer"]
 anchor_bottom = 0.14
 margin_top = -4.0
 margin_right = 61.0
 margin_bottom = 10.0
+rect_scale = Vector2( 0.75, 0.75 )
 focus_neighbour_top = NodePath("../exitButton")
 focus_mode = 0
-custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 6 )
-custom_styles/focus = SubResource( 8 )
-custom_styles/normal = ExtResource( 8 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
 
-[node name="exitButton" type="Button" parent="VBoxContainer"]
+[node name="exitButton" type="TextureButton" parent="VBoxContainer"]
 anchor_bottom = 0.14
-margin_top = 18.0
-margin_right = 61.0
-margin_bottom = 32.0
+margin_top = 24.0
+margin_right = 99.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.75, 0.75 )
 focus_neighbour_bottom = NodePath("../startButton")
 focus_mode = 0
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 5 )
-custom_styles/focus = SubResource( 9 )
-custom_styles/normal = ExtResource( 2 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

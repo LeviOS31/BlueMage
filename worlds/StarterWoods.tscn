@@ -781,14 +781,8 @@ margin_right = -5.0
 margin_bottom = -5.0
 mouse_filter = 1
 
-[node name="GoldCoin" parent="CanvasLayer/Inventory" index="3"]
-frame = 6
-
-[node name="SilverCoin" parent="CanvasLayer/Inventory" index="4"]
-frame = 4
-
 [node name="BronzeCoin" parent="CanvasLayer/Inventory" index="5"]
-frame = 10
+frame = 6
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource( 116 )
@@ -801,7 +795,6 @@ script = ExtResource( 4 )
 camera_path = NodePath("../../playercam")
 
 [node name="transitionscene" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="VBoxContainer" parent="transitionscene" index="0"]
 margin_top = 80.0

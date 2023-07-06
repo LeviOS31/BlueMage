@@ -289,13 +289,13 @@ script = ExtResource( 9 )
 [node name="Bird" type="AnimatedSprite" parent="birds"]
 position = Vector2( -8, 50 )
 frames = SubResource( 25 )
-frame = 3
 playing = true
 
 [node name="Bird2" type="AnimatedSprite" parent="birds"]
 position = Vector2( -65, 10 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 17 )
+frame = 4
 playing = true
 
 [node name="Bird4" type="AnimatedSprite" parent="birds"]
@@ -303,11 +303,13 @@ position = Vector2( -205, 25 )
 scale = Vector2( 0.75, 0.75 )
 z_index = -1
 frames = SubResource( 17 )
+frame = 4
 playing = true
 
 [node name="Bird6" type="AnimatedSprite" parent="birds"]
 position = Vector2( -344, 15 )
 frames = SubResource( 40 )
+frame = 4
 playing = true
 
 [node name="Bird7" type="AnimatedSprite" parent="birds"]
@@ -315,20 +317,21 @@ position = Vector2( -407, 50 )
 scale = Vector2( 0.4, 0.4 )
 z_index = -1
 frames = SubResource( 17 )
+frame = 4
 playing = true
 
 [node name="Bird9" type="AnimatedSprite" parent="birds"]
 position = Vector2( -564, 24 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 48 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="tree" type="AnimatedSprite" parent="."]
 position = Vector2( 313, 70 )
 scale = Vector2( 2.7, 2.7 )
 frames = SubResource( 2 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="player" type="KinematicBody2D" parent="."]
@@ -339,7 +342,7 @@ script = ExtResource( 24 )
 position = Vector2( 260, 143 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
-hframes = 73
+hframes = 83
 frame = 64
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
@@ -374,13 +377,14 @@ offset = Vector2( 23.6522, -20.4058 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
+
+[node name="Tweenaudio" type="Tween" parent="."]
 
 [node name="transitionscene" parent="." instance=ExtResource( 25 )]
 
 [connection signal="timeout" from="player/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="pressed" from="transitionscene/VBoxContainer/startButton" to="." method="_on_startButton_pressed"]
 [connection signal="pressed" from="transitionscene/VBoxContainer/exitButton" to="." method="_on_exitButton_pressed"]
 

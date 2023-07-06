@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://playercam.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/minimap.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://enemies/cavedrop/cavedrop.tscn" type="PackedScene" id=11]
 [ext_resource path="res://test/LightSource.tscn" type="PackedScene" id=12]
 [ext_resource path="res://transitions/world1.gd" type="Script" id=13]
+[ext_resource path="res://UI/minimap/map/Minimap_4.png" type="Texture" id=14]
 
 [sub_resource type="TileSet" id=102]
 0/name = "caveground.png 0"
@@ -1038,6 +1039,12 @@ position = Vector2( 189, 102 )
 scale = Vector2( 1, 1 )
 z_index = 1
 
+[node name="topright" parent="playercam" index="0"]
+position = Vector2( 2016, -1781 )
+
+[node name="bottomleft" parent="playercam" index="1"]
+position = Vector2( -1707, 1688 )
+
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -1030.0
 margin_top = -1139.0
@@ -1133,6 +1140,9 @@ camera_path = NodePath("../../playercam")
 [node name="Minimap" parent="CanvasLayer" instance=ExtResource( 2 )]
 player = NodePath("../../YSort/player")
 
+[node name="NinePatchRect" parent="CanvasLayer/Minimap" index="0"]
+texture = ExtResource( 14 )
+
 [node name="transitionscene" parent="." instance=ExtResource( 5 )]
 
 [node name="LightOutside" parent="." instance=ExtResource( 12 )]
@@ -1156,3 +1166,4 @@ shape = SubResource( 105 )
 
 [editable path="playercam"]
 [editable path="YSort/player"]
+[editable path="CanvasLayer/Minimap"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Action RPG Resources/Player/newplayer/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://battle/player/playerbattle.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Fireball"
-length = 0.55
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -17,6 +17,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 39, 38, 37, 36 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fire"
+} ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -70,12 +84,15 @@ tracks/0/keys = {
 "values": [ 18 ]
 }
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1, 13 )
+
 [node name="player" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-hframes = 73
+hframes = 83
 frame = 39
 
 [node name="AniPlayer" type="AnimationPlayer" parent="."]
@@ -85,4 +102,12 @@ anims/Iceball = SubResource( 3 )
 anims/Stoneball = SubResource( 4 )
 anims/idle = SubResource( 1 )
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 7, -1 )
+shape = SubResource( 5 )
+
 [connection signal="animation_finished" from="AniPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

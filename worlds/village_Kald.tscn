@@ -2288,6 +2288,12 @@ position = Vector2( 170, 109 )
 scale = Vector2( 1, 1 )
 z_index = 1
 
+[node name="topright" parent="playercam" index="0"]
+position = Vector2( 3230, -2861 )
+
+[node name="bottomleft" parent="playercam" index="1"]
+position = Vector2( -3170, 3539 )
+
 [node name="TilesCliff" type="TileMap" parent="."]
 z_index = 1
 tile_set = SubResource( 113 )
@@ -2515,13 +2521,13 @@ margin_bottom = -5.0
 mouse_filter = 1
 
 [node name="GoldCoin" parent="CanvasLayer/Inventory" index="3"]
-frame = 2
+frame = 1
 
 [node name="SilverCoin" parent="CanvasLayer/Inventory" index="4"]
-frame = 0
+frame = 6
 
 [node name="BronzeCoin" parent="CanvasLayer/Inventory" index="5"]
-frame = 3
+frame = 7
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource( 120 )

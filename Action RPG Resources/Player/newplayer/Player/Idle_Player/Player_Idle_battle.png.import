@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/StartFocus.png-ac65015c1141105523b99ab2b8cdaff1.stex"
+path="res://.import/Player_Idle_battle.png-85dd736d2ea15d4553c44aa199c72448.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/buttons/StartFocus.png"
-dest_files=[ "res://.import/StartFocus.png-ac65015c1141105523b99ab2b8cdaff1.stex" ]
+source_file="res://Action RPG Resources/Player/newplayer/Player/Idle_Player/Player_Idle_battle.png"
+dest_files=[ "res://.import/Player_Idle_battle.png-85dd736d2ea15d4553c44aa199c72448.stex" ]
 
 [params]
 

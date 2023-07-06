@@ -684,8 +684,8 @@ texture = ExtResource( 7 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -9 )
 texture = ExtResource( 1 )
-hframes = 73
-frame = 68
+hframes = 83
+frame = 37
 
 [node name="playercollison" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -1,14 +1,10 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var maxhealth = 100
 var health = 100
 var maxmagi = 100
 var magi = 100
-var missC = 1.00
+var missC : float = 1.00
 var DMGC = 1.00
 var DFC = 1.00
 var defence = 5
@@ -42,6 +38,7 @@ func attack():
 		return Skills.skill_data.Ghost_magi;
 	else :
 		return Skills.skill_data.Ghost_push;
+	
 
 func status():
 	return Skills.skill_data.Change_state;
@@ -54,35 +51,30 @@ func Attack():
 	else:
 		$AniPlayer.play(chosen.Animation + "_white")
 	magi -= chosen.MagiCost
-	if rand_range(0,100) < chosen.Hitprecentage:
+	
+	for effect in $"../../effects".get_children():
+		missC += (effect.ModulateMiss / 100)
+	
+	if rand_range(0,100) < (chosen.Hitprecentage * missC):
 		damage = chosen.Damage
 	else:
 		print("miss")
 		damage = 0
+	
+	missC = 1.00
 
 func Status():
 	print(chosen)
 	purple = true
 	$AniPlayer.play(chosen.Animation)
 	magi -= chosen.MagiCost
-	duration = chosen.Duration
-	missC -= float(chosen.ModulateMiss) / 100.00
-	DMGC += float(chosen.ModulateDMG) / 100.00
-	DFC += float(chosen.ModulateDFN) / 100.00
 
-func Duration():
-	var previous = 0
-	if duration != 0:
-		previous = duration
-		duration -= 1
-	if duration == 0 && previous != 0:
+func Endeffect(effectname: String):
+	if name == "Enhance":
 		purple = false
-		$AniPlayer.play("purple_to_white")
+		$AniPlayer.play("Purple_to_white")
 		yield($AniPlayer, "animation_finished")
-		missC += float(chosen.ModulateMiss) / 100.00
-		DMGC -= float(chosen.ModulateDMG) / 100.00
-		DFC -= float(chosen.ModulateDFN) / 100.00
-	
+
 func idle(name):
 	print("idle")
 	if purple:

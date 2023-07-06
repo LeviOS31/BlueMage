@@ -8,3 +8,8 @@ scale = Vector2( 0.991907, 0.981942 )
 current = true
 smoothing_speed = 4.0
 script = ExtResource( 1 )
+
+[node name="topright" type="Position2D" parent="."]
+
+[node name="bottomleft" type="Position2D" parent="."]
+scale = Vector2( 1, 1 )

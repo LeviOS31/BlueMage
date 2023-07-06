@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://battle/battle.gd" type="Script" id=1]
 [ext_resource path="res://battle/art/Healt_empty.png" type="Texture" id=2]
@@ -50,6 +50,8 @@
 [ext_resource path="res://newart/transition noise/download.jpeg" type="Texture" id=48]
 [ext_resource path="res://battle/art/hud/Hud_Blue_Banner.png" type="Texture" id=49]
 [ext_resource path="res://battle/Hud.gd" type="Script" id=50]
+[ext_resource path="res://battle/magibuttons.gd" type="Script" id=51]
+[ext_resource path="res://battle/detectprojectile.gd" type="Script" id=52]
 
 [sub_resource type="Animation" id=23]
 resource_name = "load"
@@ -89,6 +91,9 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, 125 ), Vector2( 0, 66 ) ]
 }
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 2, 25.75 )
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 14 )
@@ -274,6 +279,16 @@ value = 100.0
 texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 5 )
 
+[node name="Area2D" type="Area2D" parent="enemycontrol/enemyplatform"]
+collision_layer = 257
+script = ExtResource( 52 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemycontrol/enemyplatform/Area2D"]
+position = Vector2( -17, -13.25 )
+shape = SubResource( 25 )
+
+[node name="effects" type="Node" parent="enemycontrol"]
+
 [node name="playercontrol" type="Control" parent="."]
 margin_left = -154.0
 margin_top = -67.0
@@ -305,6 +320,8 @@ texture_progress = ExtResource( 5 )
 [node name="player" parent="playercontrol/playerplatform" instance=ExtResource( 8 )]
 position = Vector2( -1, -4 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="effects" type="Node" parent="playercontrol"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -1, 0 )
@@ -471,6 +488,7 @@ margin_left = 1.0
 margin_top = -65.0
 margin_right = 41.0
 margin_bottom = -25.0
+script = ExtResource( 51 )
 
 [node name="Sprite" type="Sprite" parent="Camera2D/Hud/magibuttons"]
 position = Vector2( 77, 64 )
@@ -673,13 +691,12 @@ autowrap = true
 layer = 100
 follow_viewport_enable = true
 
-[node name="transition" type="Sprite" parent="Camera2D/CanvasLayer"]
+[node name="transition" type="Sprite" parent="Camera2D"]
 material = SubResource( 20 )
-position = Vector2( -1, 0 )
 scale = Vector2( 0.177, 0.177 )
 script = ExtResource( 47 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/CanvasLayer/transition"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/transition"]
 anims/RESET = SubResource( 22 )
 anims/transition = SubResource( 21 )
 
@@ -753,6 +770,7 @@ __meta__ = {
 [node name="TurnTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="starttimer" to="." method="_on_starttimer_timeout"]
+[connection signal="body_entered" from="enemycontrol/enemyplatform/Area2D" to="enemycontrol/enemyplatform/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="pressed" from="Camera2D/Hud/buttons/attack" to="Camera2D/Hud/buttons" method="_on_attack_pressed"]
 [connection signal="pressed" from="Camera2D/Hud/buttons/magi" to="Camera2D/Hud/buttons" method="_on_magi_pressed"]
 [connection signal="pressed" from="Camera2D/Hud/buttons/inventory" to="Camera2D/Hud/buttons" method="_on_inventory_pressed"]
@@ -760,6 +778,15 @@ __meta__ = {
 [connection signal="pressed" from="Camera2D/Hud/attackbuttons/exit" to="Camera2D/Hud/attackbuttons/exit" method="_on_exit_pressed"]
 [connection signal="mouse_entered" from="Camera2D/Hud/magibuttons/magi1" to="Camera2D/Hud" method="_on_magi1_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/Hud/magibuttons/magi1" to="Camera2D/Hud" method="_on_magi1_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Hud/magibuttons/magi1" to="." method="_on_magi1_pressed" binds= [ "Camera2D/Hud/magibuttons/magi1" ]]
+[connection signal="pressed" from="Camera2D/Hud/magibuttons/magi1" to="Camera2D/Hud/magibuttons" method="_on_magi1_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Hud/magibuttons/magi2" to="Camera2D/Hud" method="_on_magi2_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Hud/magibuttons/magi2" to="Camera2D/Hud" method="_on_magi2_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Hud/magibuttons/magi2" to="Camera2D/Hud/magibuttons" method="_on_magi2_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Hud/magibuttons/magi3" to="Camera2D/Hud" method="_on_magi3_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Hud/magibuttons/magi3" to="Camera2D/Hud" method="_on_magi3_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Hud/magibuttons/magi3" to="Camera2D/Hud/magibuttons" method="_on_magi3_pressed"]
+[connection signal="mouse_entered" from="Camera2D/Hud/magibuttons/magi4" to="Camera2D/Hud" method="_on_magi4_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Hud/magibuttons/magi4" to="Camera2D/Hud" method="_on_magi4_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Hud/magibuttons/magi4" to="Camera2D/Hud/magibuttons" method="_on_magi4_pressed"]
 [connection signal="pressed" from="Camera2D/Hud/magibuttons/exit" to="Camera2D/Hud/magibuttons/exit" method="_on_exit_pressed"]
 [connection signal="pressed" from="Camera2D/Hud/inventory/exit" to="Camera2D/Hud/inventory/exit" method="_on_exit_pressed"]

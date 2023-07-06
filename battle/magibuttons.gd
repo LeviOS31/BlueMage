@@ -1,16 +1,16 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal pressed(value)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_magi1_pressed():
+	emit_signal("pressed", $magi1/Magi1Lbl.text)
 
+func _on_magi2_pressed():
+	emit_signal("pressed", $magi2/Magi2Lbl.text)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_magi3_pressed():
+	emit_signal("pressed", $magi3/Magi3Lbl.text)
+
+func _on_magi4_pressed():
+	emit_signal("pressed", $magi4/Magi4Lbl.text)

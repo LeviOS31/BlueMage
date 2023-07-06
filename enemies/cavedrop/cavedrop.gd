@@ -20,7 +20,8 @@ onready var velocity = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#battle()
+	pass
 
 func _physics_process(delta):
 	match state:
@@ -74,4 +75,6 @@ func battle():
 func _on_detection_area_entered(area):
 	print(area)
 
+func spit():
+	pass
 
